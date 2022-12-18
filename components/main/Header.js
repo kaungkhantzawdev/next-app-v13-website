@@ -11,8 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { spacing } from '@mui/system';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home','Service','About Us', 'Our team', 'Contact Us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
@@ -35,10 +36,10 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" 
+    <AppBar position='static'
     sx={{ 
         boxShadow: 0,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -50,7 +51,8 @@ function Header() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              color: '#000',
+              color: '#0000ff',
+              fontWeight: 600,
               textDecoration: 'none',
             }}
           >
@@ -102,28 +104,27 @@ function Header() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: '#000',
+              color: '#0000ff',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Healthbag
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: '#000', display: 'block' }}
+                sx={{ my: 2, color: '#000', display: 'block', textTransform: 'capitalize', borderRadius: '8px' }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
-         
+          <Button variant='primary' sx={{ px: 3,my: 2, ml: 1, backgroundColor: 'blue !important', borderRadius: '8px', textTransform: 'capitalize'}}>
+              Login
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>

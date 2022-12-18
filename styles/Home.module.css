@@ -127,3 +127,9 @@
     filter: invert(1);
   }
 }
+
+
+/* home  */
+.home{
+  background-image: '/assets/img/blue.svg';
+}
